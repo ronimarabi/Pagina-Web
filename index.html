@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Agua Diaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calcula Tu Agua Diaria</h1>
+    </header>
+
+    <main class="main-container">
+        <section class="container">
+            <form id="form-calculadora" aria-labelledby="form-label">
+                <h2 id="form-label">Formulario de Cálculo de Agua</h2>
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" required>
+
+                <label for="edad">Edad (años):</label>
+                <input type="number" id="edad" required>
+
+                <label for="sexo">Sexo:</label>
+                <select id="sexo">
+                    <option value="1">Masculino</option>
+                    <option value="0.9">Femenino</option>
+                </select>
+
+                <label for="actividad">Nivel de Actividad Física:</label>
+                <select id="actividad">
+                    <option value="1.2">Sedentario</option>
+                    <option value="1.4">Ligero</option>
+                    <option value="1.6">Moderado</option>
+                    <option value="1.8">Activo</option>
+                </select>
+
+                <label for="clima">Clima:</label>
+                <select id="clima">
+                    <option value="0.9">Frío</option>
+                    <option value="1">Moderado</option>
+                    <option value="1.2">Caluroso</option>
+                </select>
+
+                <label for="dieta">Tipo de Dieta:</label>
+                <select id="dieta">
+                    <option value="1">Normal</option>
+                    <option value="1.1">Alta en proteínas</option>
+                    <option value="1.2">Baja en carbohidratos</option>
+                </select>
+
+                <button type="submit">Calcular Agua</button>
+            </form>
+
+            <div id="resultado" aria-live="polite"></div>
+            <div id="recomendacion" aria-live="polite"></div>
+            <canvas id="graficoAgua"></canvas>
+        </section>
+    </main>
+
+    <div class="tips" id="tips-container">
+        <h2>Tip del día:</h2>
+        <p id="tip"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
