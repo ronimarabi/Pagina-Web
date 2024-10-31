@@ -3,19 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Agua Diaria</title>
+    <title>Importancia del Agua y Calculadora de Consumo</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-        <h1>Calcula Tu Agua Diaria</h1>
+        <h1>Conoce la Importancia del Agua</h1>
     </header>
 
     <main class="main-container">
+        <!-- Sección: Importancia del Agua -->
+        <section class="info-container importancia-agua">
+            <h2>¿Por qué es importante el agua?</h2>
+
+            <div class="buttons-container">
+                <button onclick="mostrarInfo('salud')">Beneficios para la Salud</button>
+                <button onclick="mostrarInfo('ambiental')">Impacto Ambiental</button>
+                <button onclick="mostrarInfo('hidratacion')">Importancia de la Hidratación</button>
+                <button onclick="mostrarInfo('cultura')">Importancia Cultural</button>
+                <button onclick="mostrarInfo('economica')">Importancia Económica</button>
+                <button onclick="mostrarInfo('saludMental')">Salud Mental</button>
+                <button onclick="mostrarInfo('estiloVida')">Estilo de Vida Sostenible</button>
+                <button onclick="mostrarInfo('nutricion')">Nutrición y Agua</button>
+                <button onclick="mostrarInfo('deporte')">Agua en el Deporte</button>
+            </div>
+
+            <!-- Contenedor para mostrar información dinámica -->
+            <div id="info-texto" class="info-texto">
+                <div id="info-imagen" class="info-imagen"></div>
+                <div id="info-descripcion" class="info-descripcion"></div>
+            </div>
+        </section>
+
+        <!-- Calculadora de Agua Diaria (parte inferior) -->
         <section class="container">
-            <form id="form-calculadora" aria-labelledby="form-label">
-                <h2 id="form-label">Formulario de Cálculo de Agua</h2>
+            <form id="form-calculadora" onsubmit="calcularConsumoAgua(event);" aria-labelledby="form-label">
+                <h2>Calcula tu Consumo de Agua Diario</h2>
                 <label for="peso">Peso (kg):</label>
                 <input type="number" id="peso" required>
 
@@ -48,22 +72,25 @@
                     <option value="1">Normal</option>
                     <option value="1.1">Alta en proteínas</option>
                     <option value="1.2">Baja en carbohidratos</option>
+                    <option value="1.05">Vegetariana</option>
+                    <option value="1.1">Vegana</option>
+                    <option value="1.15">Alta en fibra</option>
+                    <option value="1.05">Baja en grasas</option>
                 </select>
 
+
                 <button type="submit">Calcular Agua</button>
+
+                <!-- Contenedor para el gráfico, oculto inicialmente -->
+                <div id="chartContainer" style="display: none;">
+                    <canvas id="graficoAgua"></canvas>
+                </div>
             </form>
 
             <div id="resultado" aria-live="polite"></div>
-            <div id="recomendacion" aria-live="polite"></div>
-            <canvas id="graficoAgua"></canvas>
+            <p id="mensaje"></p>
         </section>
     </main>
-
-    <div class="tips" id="tips-container">
-        <h2>Tip del día:</h2>
-        <p id="tip"></p>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
+/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #0033cc, #00ccff); 
+    background: linear-gradient(to right, #0033cc, #00ccff);
 }
 
 header {
@@ -21,93 +22,177 @@ header.mostrar {
 
 .main-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container {
-    background-color: white;
-    padding: 30px;
+.info-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f8ff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    max-width: 900px; 
-    margin: 30px;
-    width: 90%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-@media (max-width: 600px) {
-    header {
-        padding: 20px 10px;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
-    button {
-        font-size: 1em;
-    }
+.titulo-info {
+    background-color: #0454a4;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-label {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #333;
+.buttons-container {
+    margin: 20px 0;
 }
 
-input[type="number"], select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
+.buttons-container button {
+    margin: 10px;
+    padding: 10px 20px;
     background-color: #1e90ff;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.buttons-container button:hover {
     background-color: #4682b4;
 }
 
-#resultado {
+.detalles-container {
+    display: none;
     margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #1e90ff;
-}
-
-#tips-container {
-    background-color: rgba(173, 216, 230, 0.9);
     padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
     text-align: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 30px auto;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: max-height 0.5s ease-out;
+    max-height: 0;
+    overflow: hidden;
 }
 
-#tips-container.mostrar {
-    opacity: 1;
-    transform: translateX(0);
+.detalles-container.mostrar {
+    display: block;
+}
+
+.imagen-detalle {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subtemas h4 {
+    color: #0454a4;
+    margin-top: 10px;
+}
+
+.subtemas p {
+    color: #333;
+}
+
+/* Ajuste del contenedor de la calculadora */
+.container {
+    margin-top: 40px;
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Estilos para el formulario de la calculadora */
+#form-calculadora {
+    width: 100%; /* Para que ocupe el ancho completo del contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-calculadora input[type="text"],
+#form-calculadora input[type="number"],
+#form-calculadora select {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#form-calculadora label {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#resultado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
 }
 
 #tip {
-    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+}
+
+#graficoAgua {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.nueva-seccion {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border: 2px solid #0454a4;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.nueva-seccion h3 {
+    color: #0454a4;
+    margin-bottom: 10px;
+}
+
+.nueva-seccion p {
     color: #333;
+}
+
+.nueva-seccion img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.detalles-container {
+    transition: all 0.3s ease;
+}
+
+.info-imagen img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#chartContainer {
+    display: none;
 }
