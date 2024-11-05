@@ -90,6 +90,18 @@
             <div id="resultado" aria-live="polite"></div>
             <p id="mensaje"></p>
         </section>
+        <!-- CRUD: Metas de Consumo de Agua -->
+        <section class="crud-container">
+            <h2>Administra tus Metas de Consumo de Agua</h2>
+            <form id="meta-form" onsubmit="agregarMeta(event);">
+                <label for="meta">Nueva Meta (ml):</label>
+                <input type="number" id="meta" required>
+                <button type="submit">Agregar Meta</button>
+            </form>
+
+            <ul id="lista-metas" class="lista-metas"></ul>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>

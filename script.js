@@ -180,3 +180,44 @@ function mostrarTipDiario() {
     ];
     document.getElementById('tip').innerText = tips[Math.floor(Math.random() * tips.length)];
 }
+
+let metas = [];
+
+function agregarMeta(event) {
+    event.preventDefault();
+    const metaInput = document.getElementById('meta');
+    const nuevaMeta = metaInput.value;
+    if (nuevaMeta) {
+        metas.push(nuevaMeta);
+        metaInput.value = '';
+        mostrarMetas();
+    }
+}
+
+function mostrarMetas() {
+    const listaMetas = document.getElementById('lista-metas');
+    listaMetas.innerHTML = ''; // Limpiar la lista actual
+
+    metas.forEach((meta, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${meta} ml</span>
+            <button onclick="editarMeta(${index})">Editar</button>
+            <button onclick="eliminarMeta(${index})">Eliminar</button>
+        `;
+        listaMetas.appendChild(li);
+    });
+}
+
+function editarMeta(index) {
+    const nuevaMeta = prompt("Edita tu meta (ml):", metas[index]);
+    if (nuevaMeta) {
+        metas[index] = nuevaMeta;
+        mostrarMetas();
+    }
+}
+
+function eliminarMeta(index) {
+    metas.splice(index, 1);
+    mostrarMetas();
+}

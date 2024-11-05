@@ -196,3 +196,44 @@ header.mostrar {
 #chartContainer {
     display: none;
 }
+
+.crud-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.lista-metas {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.lista-metas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.lista-metas button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ff6961;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lista-metas button:hover {
+    background-color: #ff5a50;
+}
